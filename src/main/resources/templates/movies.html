@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http:/www.thymeleaf.org">
+	<head>
+		<title>Best movies</title>
+	</head>
+	
+	<body>
+		<h1>Best of movies 2021</h1>
+		<div th:if="${movies.size() > 0}">
+			<ol>
+				<li th:each="movie : ${movies}" th:text="${movie}"></li>
+			</ol>
+		</div>
+		<p th:unless="${movies.size() > 0}">Non ci sono film nel database</p>
+		<div>
+			<ul style="list-style: none;">
+				<li>
+					<a th:href="@{'/'}">Torna alla Home</a>
+				</li>
+			</ul >
+		</div>
+	</body>
+</html>

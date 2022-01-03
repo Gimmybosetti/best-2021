@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http:/www.thymeleaf.org">
+	<head>
+		<title>Best songs</title>
+	</head>
+	
+	<body>
+		<h1>Best of songs 2021</h1>
+		<div th:if="${songs.size() > 0}">
+			<ol>
+				<li th:each="song : ${songs}" th:text="${song}"></li>
+			</ol>
+		</div>
+		<p th:unless="${songs.size() > 0}">Non ci sono canzoni nel database</p>
+		<div>
+			<ul style="list-style: none;">
+				<li>
+					<a th:href="@{'/'}">Torna alla Home</a>
+				</li>
+			</ul >
+		</div>
+	</body>
+</html>
